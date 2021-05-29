@@ -244,6 +244,14 @@ handle_stats(struct user *u, char req)
 		  break;
 
 	  case 'T':
+		  numeric_sts(me.me, 249, u, "T :server     %7u", cnt.server);
+		  numeric_sts(me.me, 249, u, "T :user       %7u", cnt.user);
+		  numeric_sts(me.me, 249, u, "T :chan       %7u", cnt.chan);
+		  numeric_sts(me.me, 249, u, "T :myuser     %7u", cnt.myuser);
+		  numeric_sts(me.me, 249, u, "T :mynick     %7u", cnt.mynick);
+		  numeric_sts(me.me, 249, u, "T :mychan     %7u", cnt.mychan);
+		  break;
+
 	  case 't':
 		  if (!has_priv_user(u, PRIV_SERVER_AUSPEX))
 			  break;
